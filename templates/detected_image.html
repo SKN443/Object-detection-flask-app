@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img {
+            max-width: 50%; /* Set maximum width to fit container */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Ensure images don't have extra space beneath them */
+            margin: 0 auto; /* Center images horizontally */
+        }
+    </style>
+    <title>Image Detection</title>
+</head>
+<body>
+    <h1>Upload an Image</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Select your image:</label>
+        <input type="file" id="file" name="file">
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if file_url %}
+        <h1>Object Detection:</h1>
+        <img src="{{ file_url }}" alt="Uploaded Image">
+    {% endif %}
+</body>
+</html>
