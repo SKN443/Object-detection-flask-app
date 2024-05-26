@@ -10,13 +10,29 @@ git clone https://github.com/SKN443/Object-detection-flask-app.git
 cd Object-detection-flask-app
 ```
 
-### 2. Install 
+### 2. Set up virtual environment
 ```bash
-pip install --upgrade -r requirements.txt
+python -m pip install virtualenv
 ```
 
-### 3. Run app
+### 3. Create and activate venv
 ```bash
+python -m venv myenv
+myenv/Scripts/activate  
+```
+Above line is for Window. Using `source myenv/bin/activate` to activate virtual environment in Ubuntu.
+
+### 4. Install [YOLOv5](https://github.com/ultralytics/yolov5/tree/master)
+```bash
+git clone https://github.com/ultralytics/yolov5
+cd yolov5
+pip install -qr requirements.txt comet_ml
+```
+
+### 5. Install Flask module and run your local app
+```bash
+pip install flask
+cd ..
 python app.py
 ```
 
